@@ -21,6 +21,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mash-labs.vercel.app"),
   title: "Mash Labs — Software & AI Solutions",
   description:
     "We build digital solutions that move your business forward. Web development, AI solutions, and automation for growing businesses.",
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
       "Web development, AI solutions, and automation for growing businesses.",
     type: "website",
     siteName: "Mash Labs",
+    url: "https://mash-labs.vercel.app",
     images: [
       {
         url: "/og-image.png",
@@ -40,7 +42,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
