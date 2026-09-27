@@ -1,0 +1,78 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+
+export function Hero() {
+  return (
+    <section className="bg-white pt-16 pb-20 md:pt-24 md:pb-28">
+      <Container>
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-8">
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl"
+            >
+              We build digital solutions that move your business forward.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 text-base text-slate md:text-lg"
+            >
+              Web Development
+              <span className="mx-2 text-amber">•</span>
+              AI
+              <span className="mx-2 text-amber">•</span>
+              Automation
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 flex flex-wrap gap-4"
+            >
+              <Button href="#contact" variant="primary">
+                Start a Conversation
+              </Button>
+              <Button href="#work" variant="secondary">
+                View Our Work
+              </Button>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="overflow-hidden rounded-sm border border-line shadow-sm">
+              <div className="flex items-center gap-1.5 border-b border-line bg-paper px-4 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+              </div>
+              <Image
+                src="/images/studymate-hero.png"
+                alt="StudyMate AI dashboard interface"
+                width={1200}
+                height={800}
+                className="w-full"
+                priority
+              />
+            </div>
+            <div className="absolute -right-3 -top-3 -z-10 h-full w-full rounded-sm border border-amber/30 md:-right-4 md:-top-4" />
+          </motion.div>
+        </div>
+      </Container>
+    </section>
+  );
+}
