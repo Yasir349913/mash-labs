@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+html {
+  scroll-behavior: smooth;
+}
 @theme {
   --color-paper: #ece9e1;
   --color-ink: #15181e;
@@ -16,4 +18,14 @@
 body {
   background-color: #ffffff;
   color: var(--color-ink);
+}
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
 }

@@ -30,13 +30,13 @@ export function SelectedWork() {
                   direction={imageFirst ? "left" : "right"}
                   className={imageFirst ? "md:order-1" : "md:order-2"}
                 >
-                  <div className="overflow-hidden rounded-sm border border-line">
+                  <div className="group overflow-hidden rounded-sm border border-line">
                     <Image
                       src={project.image}
                       alt={`${project.title} interface`}
                       width={1000}
                       height={700}
-                      className="w-full"
+                      className="w-full transition-transform duration-500 ease-out group-hover:scale-105"
                     />
                   </div>
                 </FadeIn>

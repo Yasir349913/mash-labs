@@ -5,7 +5,7 @@ import { industries } from "@/data/industries";
 
 export function Industries() {
   return (
-    <section className="bg-paper py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -19,7 +19,7 @@ export function Industries() {
             const Icon = industry.icon;
             return (
               <FadeIn key={industry.title} delay={i * 0.08}>
-                <div className="h-full border border-line bg-white p-6">
+                <div className="h-full border border-line bg-white p-6 transition-colors hover:border-ink/30">
                   <Icon className="h-5 w-5 text-amber" strokeWidth={1.5} />
                   <h3 className="mt-4 font-display text-base font-semibold text-ink">
                     {industry.title}

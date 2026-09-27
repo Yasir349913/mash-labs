@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 
 export function Services() {
   return (
-    <section id="services" className="bg-paper py-20 md:py-28">
+    <section id="services" className="bg-white py-20 md:py-28">
       <Container>
         <FadeIn>
           <SectionHeading

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
-
+import { MagneticButton } from "@/components/ui/MagneticButton";
 export function FinalCTA() {
   return (
     <section className="bg-ink py-24 md:py-32">
@@ -15,10 +15,12 @@ export function FinalCTA() {
             how — we can help.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="#contact" variant="primary" className="hover:bg-amber">
-              Start a Conversation
-            </Button>
-          </div>
+  <MagneticButton>
+    <Button href="#contact" variant="primary" className="hover:bg-amber">
+      Start a Conversation
+    </Button>
+  </MagneticButton>
+</div>
         </FadeIn>
       </Container>
     </section>

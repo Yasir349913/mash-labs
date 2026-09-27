@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { CodeEditorAnimation } from "@/components/sections/CodeEditorAnimation";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function Hero() {
   return (
@@ -34,18 +35,20 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 flex flex-wrap gap-4"
-            >
-              <Button href="#contact" variant="primary">
-                Start a Conversation
-              </Button>
-              <Button href="#work" variant="secondary">
-                View Our Work
-              </Button>
-            </motion.div>
+  initial={{ opacity: 0, y: 16 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+  className="mt-8 flex flex-wrap items-center gap-4"
+>
+  <MagneticButton>
+    <Button href="#contact" variant="primary">
+      Start a Conversation
+    </Button>
+  </MagneticButton>
+  <Button href="#work" variant="secondary">
+    View Our Work
+  </Button>
+</motion.div>
           </div>
 
           <motion.div
@@ -54,21 +57,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="overflow-hidden rounded-sm border border-line shadow-sm">
-              <div className="flex items-center gap-1.5 border-b border-line bg-paper px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-                <span className="h-2.5 w-2.5 rounded-full bg-line" />
-              </div>
-              <Image
-                src="/images/studymate-hero.png"
-                alt="StudyMate AI dashboard interface"
-                width={1200}
-                height={800}
-                className="w-full"
-                priority
-              />
-            </div>
+            <CodeEditorAnimation />
             <div className="absolute -right-3 -top-3 -z-10 h-full w-full rounded-sm border border-amber/30 md:-right-4 md:-top-4" />
           </motion.div>
         </div>

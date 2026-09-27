@@ -6,7 +6,7 @@ import { whyUsPoints } from "@/data/whyUs";
 
 export function WhyUs() {
   return (
-    <section className="bg-paper py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <Container>
         <FadeIn>
           <SectionHeading
