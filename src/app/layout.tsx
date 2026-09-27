@@ -29,11 +29,13 @@ export const metadata: Metadata = {
     description:
       "Web development, AI solutions, and automation for growing businesses.",
     type: "website",
+    siteName: "Mash Labs",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Mash Labs — Software & AI Solutions",
       },
     ],
   },
