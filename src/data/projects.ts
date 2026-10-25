@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "Admin prototype for reviewing requests (mock data)",
       "Phone and WhatsApp contact options",
     ],
-    // tech: add after verifying the stack
+    tech: ["Next.js"],
   },
   {
     slug: "studymate-ai",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       "Summarization of long material",
       "Knowledge retrieval across uploaded documents",
     ],
-    tech: ["Next.js", "RAG", "Vector Search", "LLM API"],
+    tech: ["React", "RAG", "Vector Search", "LLM API"],
   },
   {
     slug: "zezt-portal",
