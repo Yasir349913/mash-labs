@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +11,10 @@ export function CustomCursor() {
     const supportsHover = window.matchMedia(
       "(hover: hover) and (pointer: fine)"
     ).matches;
-    if (!supportsHover) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (!supportsHover || prefersReducedMotion) return;
 
     setIsVisible(true);
 
@@ -24,9 +26,6 @@ export function CustomCursor() {
     function onMouseMove(e: MouseEvent) {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-      }
     }
 
     function animateRing() {
@@ -68,17 +67,12 @@ export function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <>
-      <div
-        ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber"
-      />
-      <div
-        ref={ringRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[999] -translate-x-1/2 -translate-y-1/2 rounded-full border transition-[width,height,border-color] duration-200 ${
-          isHovering ? "h-10 w-10 border-amber" : "h-7 w-7 border-ink/30"
-        }`}
-      />
-    </>
+    <div
+      ref={ringRef}
+      aria-hidden="true"
+      className={`pointer-events-none fixed left-0 top-0 z-[999] -translate-x-1/2 -translate-y-1/2 rounded-full border transition-[width,height,border-color] duration-200 ${
+        isHovering ? "h-10 w-10 border-amber" : "h-7 w-7 border-ink/30"
+      }`}
+    />
   );
 }

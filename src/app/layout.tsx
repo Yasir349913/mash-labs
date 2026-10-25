@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 
 import "./globals.css";
 
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
     images: ["/images/og-image.png"],
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,10 +60,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} font-body antialiased`}>
-  <CustomCursor />
-  {children}
-</body>
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} font-body antialiased`}
+      >
+        <MotionProvider>
+          <CustomCursor />
+          {children}
+        </MotionProvider>
+      </body>
     </html>
   );
 }

@@ -12,43 +12,64 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-8">
           <div>
-            <motion.h1
+            <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-4xl font-semibold leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl"
+              className="font-mono text-xs uppercase tracking-wide text-amber"
             >
-              We build digital solutions that move your business forward.
+              Software &amp; AI studio
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-ink md:text-5xl"
+            >
+              Websites, AI and automation that bring in enquiries and take work
+              off your team.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 text-base text-slate md:text-lg"
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 max-w-xl text-base text-slate md:text-lg"
             >
-              Web Development
-              <span className="mx-2 text-amber">•</span>
-              AI
-              <span className="mx-2 text-amber">•</span>
-              Automation
+              Mash Labs designs and builds business websites, AI assistants,
+              knowledge tools and workflow automation for companies in the UK
+              and USA. You work directly with the person building it.
             </motion.p>
 
             <motion.div
-  initial={{ opacity: 0, y: 16 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-  className="mt-8 flex flex-wrap items-center gap-4"
->
-  <MagneticButton>
-    <Button href="#contact" variant="primary">
-      Start a Conversation
-    </Button>
-  </MagneticButton>
-  <Button href="#work" variant="secondary">
-    View Our Work
-  </Button>
-</motion.div>
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 flex flex-wrap items-center gap-4"
+            >
+              <MagneticButton>
+                <Button href="#contact" variant="primary">
+                  Discuss Your Project
+                </Button>
+              </MagneticButton>
+              <Button href="#work" variant="secondary">
+                View Our Work
+              </Button>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.45 }}
+              className="mt-8 text-sm text-slate"
+            >
+              Web development
+              <span className="mx-2 text-amber">•</span>
+              AI assistants
+              <span className="mx-2 text-amber">•</span>
+              Workflow automation
+            </motion.p>
           </div>
 
           <motion.div

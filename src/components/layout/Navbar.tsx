@@ -14,6 +14,9 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const ctaLabel = "Discuss Your Project";
+const ctaHref = "#contact";
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -22,7 +25,8 @@ export function Navbar() {
   useEffect(() => {
     function handleScroll() {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
     }
 
@@ -80,8 +84,12 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Button href="#contact" variant="primary" className="hidden md:inline-flex">
-          Start a Conversation
+        <Button
+          href={ctaHref}
+          variant="primary"
+          className="hidden md:inline-flex"
+        >
+          {ctaLabel}
         </Button>
 
         <button
@@ -114,12 +122,12 @@ export function Navbar() {
             ))}
           </nav>
           <Button
-            href="#contact"
+            href={ctaHref}
             variant="primary"
             className="mt-6 w-full"
             onClick={() => setIsOpen(false)}
           >
-            Start a Conversation
+            {ctaLabel}
           </Button>
         </div>
       )}
