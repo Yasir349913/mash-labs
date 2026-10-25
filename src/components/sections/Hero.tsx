@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CodeEditorAnimation } from "@/components/sections/CodeEditorAnimation";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { primaryCta } from "@/lib/config";
 
 export function Hero() {
   return (
@@ -49,8 +50,8 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               <MagneticButton>
-                <Button href="#contact" variant="primary">
-                  Discuss Your Project
+                <Button href={primaryCta.href} variant="primary">
+                  {primaryCta.label}
                 </Button>
               </MagneticButton>
               <Button href="#work" variant="secondary">

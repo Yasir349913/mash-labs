@@ -11,6 +11,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { About } from "@/components/sections/About";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Booking } from "@/components/sections/Booking";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <About />
       <FAQ />
       <FinalCTA />
+      <Booking />
       <Contact />
     </main>
   );

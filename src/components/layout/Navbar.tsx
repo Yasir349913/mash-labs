@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { primaryCta } from "@/lib/config";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -14,8 +15,8 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const ctaLabel = "Discuss Your Project";
-const ctaHref = "#contact";
+const ctaLabel = primaryCta.label;
+const ctaHref = primaryCta.href;
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
