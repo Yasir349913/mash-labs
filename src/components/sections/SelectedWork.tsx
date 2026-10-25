@@ -33,9 +33,10 @@ export function SelectedWork() {
                   <div className="group overflow-hidden rounded-sm border border-line">
                     <Image
                       src={project.image}
-                      alt={`${project.title} interface`}
+                      alt={project.imageAlt ?? `${project.title} interface`}
                       width={1000}
                       height={700}
+                      priority={i === 0}
                       className="w-full transition-transform duration-500 ease-out group-hover:scale-105"
                     />
                   </div>
@@ -46,22 +47,42 @@ export function SelectedWork() {
                   className={imageFirst ? "md:order-2" : "md:order-1"}
                 >
                   <div>
-                    <h3 className="font-display text-2xl font-semibold text-ink md:text-3xl">
+                    {project.label && (
+                      <span className="inline-block rounded-sm border border-amber/40 px-2.5 py-1 font-mono text-xs uppercase tracking-wide text-amber">
+                        {project.label}
+                      </span>
+                    )}
+
+                    <h3
+                      className={`font-display text-2xl font-semibold text-ink md:text-3xl ${
+                        project.label ? "mt-4" : ""
+                      }`}
+                    >
                       {project.title}
                     </h3>
+
+                    {project.note && (
+                      <p className="mt-3 border-l-2 border-amber/60 pl-3 text-sm text-slate">
+                        {project.note}
+                      </p>
+                    )}
 
                     <div className="mt-6 space-y-5">
                       <div>
                         <p className="text-xs font-medium uppercase tracking-wide text-slate">
                           Problem
                         </p>
-                        <p className="mt-1 text-sm text-ink">{project.problem}</p>
+                        <p className="mt-1 text-sm text-ink">
+                          {project.problem}
+                        </p>
                       </div>
                       <div>
                         <p className="text-xs font-medium uppercase tracking-wide text-slate">
                           Solution
                         </p>
-                        <p className="mt-1 text-sm text-ink">{project.solution}</p>
+                        <p className="mt-1 text-sm text-ink">
+                          {project.solution}
+                        </p>
                       </div>
                       <div>
                         <p className="text-xs font-medium uppercase tracking-wide text-slate">
@@ -77,36 +98,48 @@ export function SelectedWork() {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-sm border border-line px-2.5 py-1 font-mono text-xs text-slate"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                    {project.tech && project.tech.length > 0 && (
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {project.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-sm border border-line px-2.5 py-1 font-mono text-xs text-slate"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     <div className="mt-6 flex flex-wrap gap-5">
                       {project.liveUrl && (
                         <Link
                           href={project.liveUrl}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm font-medium text-ink hover:text-amber"
                         >
-                          View live project
-                          <ArrowUpRight className="h-4 w-4" />
+                          {project.label
+                            ? "View live demo"
+                            : "View live project"}
+                          <ArrowUpRight
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                          />
                         </Link>
                       )}
                       {project.githubUrl && (
                         <Link
                           href={project.githubUrl}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm font-medium text-slate hover:text-ink"
                         >
                           View on GitHub
-                          <ArrowUpRight className="h-4 w-4" />
+                          <ArrowUpRight
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                          />
                         </Link>
                       )}
                     </div>
