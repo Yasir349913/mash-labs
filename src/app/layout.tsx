@@ -36,12 +36,19 @@ export const metadata: Metadata = {
     url: "https://mash-labs.vercel.app",
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mash Labs — Software & AI Solutions",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mash Labs — Software & AI Solutions",
+    description:
+      "Web development, AI solutions, and automation for growing businesses.",
+    images: ["/images/og-image.png"],
   },
 };
 export default function RootLayout({
